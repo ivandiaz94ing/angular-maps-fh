@@ -81,11 +81,12 @@ export class MarkersPageComponent {
   deleteMarker(index : number){
     this.markers[index].marker.remove();
     this.markers.splice(index, 1);
+    this.saveLocalStorage();
   }
 
   flyTo(marker :  Marker){
     this.map?.flyTo({
-      zoom: 15,
+      zoom: 14,
       center: marker.getLngLat()
     });
   }
